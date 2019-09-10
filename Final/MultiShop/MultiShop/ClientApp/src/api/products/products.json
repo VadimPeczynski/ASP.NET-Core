@@ -1,0 +1,52 @@
+[
+    {
+        "productId": 1,
+        "productName": "Grabie",
+        "productCode": "GDN-0011",
+        "releaseDate": "19.03.2016",
+        "description": "Grabie ogrodowe z drewnanym trzonkiem.",
+        "price": 19.95,
+        "starRating": 3.2,
+        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+    },
+    {
+        "productId": 2,
+        "productName": "Wózek ogrodowy",
+        "productCode": "GDN-0023",
+        "releaseDate": "18.03.2016",
+        "description": "Wózek ogrodowy o pojemności 50 litrów",
+        "price": 32.99,
+        "starRating": 4.2,
+        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+    },
+    {
+        "productId": 5,
+        "productName": "Młot",
+        "productCode": "TBX-0048",
+        "releaseDate": "21.05.2016",
+        "description": "Stalowy młot",
+        "price": 8.9,
+        "starRating": 4.8,
+        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+    },
+    {
+        "productId": 8,
+        "productName": "Piła",
+        "productCode": "TBX-0022",
+        "releaseDate": "15.06.2016",
+        "description": "Stalowa piła ręczna",
+        "price": 11.55,
+        "starRating": 3.7,
+        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
+    },
+    {
+        "productId": 10,
+        "productName": "Kontroler do gier",
+        "productCode": "GMG-0042",
+        "releaseDate": "15.09.2016",
+        "description": "Kontroler do konsol Xbox",
+        "price": 35.95,
+        "starRating": 4.6,
+        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
+    }
+]
