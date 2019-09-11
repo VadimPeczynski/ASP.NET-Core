@@ -33,14 +33,16 @@ namespace MultiShop.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        public void Post([FromBody]string value)
+        public Product Post([FromBody]Product product)
         {
+            return repository.AddProduct(product);
         }
 
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public Product Put(int id, [FromBody]Product value)
         {
+            return repository.UpdateProduct(id, value);
         }
 
         // DELETE api/<controller>/5

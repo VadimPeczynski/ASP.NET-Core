@@ -10,8 +10,13 @@
             </div>
         </div>
         <div class='row'>
-            <div class='col-md-6 left'>
+            <div class='col-md-5 left'>
                 <h3>Filtrowanie po: {{listFilter}}</h3>
+            </div>
+            <div class='col-md-2'>
+                <button class='btn btn-primary' (click)='addProduct()'>
+                    Dodaj produkt
+                </button>
             </div>
         </div>
         <div class='table-responsive' *ngIf='products && products.length'>
@@ -28,6 +33,7 @@
                         <th>Dostępny od</th>
                         <th>Cena</th>
                         <th>Ocena</th>
+                        <th>Edytuj</th>
                         <th>Usuń</th>
                     </tr>
                 </thead>
@@ -48,9 +54,16 @@
                         <td>
                             <app-star [rating]="product.starRating" (starRatingClicked)="onStarRatingClicked($event)"></app-star>
                         </td>
-                        <button class='btn btn-danger' (click)='deleteProduct(product)'>
-                            Usuń
-                        </button>
+                        <td>
+                            <button class='btn btn-danger' (click)='editProduct(product)'>
+                                Edytuj
+                            </button>
+                        </td>
+                        <td>
+                            <button class='btn btn-danger' (click)='deleteProduct(product)'>
+                                Usuń
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

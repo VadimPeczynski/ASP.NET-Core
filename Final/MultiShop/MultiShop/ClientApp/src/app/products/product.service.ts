@@ -21,7 +21,6 @@ export class ProductService {
     getProduct(id:number): Observable<IProduct>{
         const url = `${this._productUrl}/${id}`;
         return this._http.get<IProduct>(url).pipe(
-            //tap(data => console.log('All: ' + JSON.stringify(data))),
             catchError(this.handleError)
         ); 
     }
@@ -29,7 +28,20 @@ export class ProductService {
     deleteProduct(id:number): Observable<{}>{
         const url = `${this._productUrl}/${id}`;
         return this._http.delete(url).pipe(
-            //tap(data => console.log('All: ' + JSON.stringify(data))),
+            catchError(this.handleError)
+        ); 
+    }
+
+    addProduct(product: IProduct): Observable<IProduct>{
+        return this._http.post<IProduct>(this._productUrl, product).pipe(
+            catchError(this.handleError)
+        ); 
+    }
+
+    updateProduct(product: IProduct): Observable<IProduct>{
+        product.productCode += '1';
+        const url = `${this._productUrl}/${product.productId}`;
+        return this._http.put<IProduct>(url, product).pipe(
             catchError(this.handleError)
         ); 
     }

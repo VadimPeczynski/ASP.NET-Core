@@ -15,6 +15,16 @@ namespace MultiShop.Models
 
         public IQueryable<Product> Products => context.Products;
 
+        public Product AddProduct(Product product)
+        {
+            using (context)
+            {
+                context.Products.Add(product);
+                context.SaveChanges();
+                return product;
+            }
+        }
+
         public void DeleteProduct(int id)
         {
             using (context)
@@ -25,6 +35,16 @@ namespace MultiShop.Models
 
                 context.Products.Remove(product);
                 context.SaveChanges();
+            }
+        }
+
+        public Product UpdateProduct(int id, Product product)
+        {
+            using (context)
+            {
+                context.Products.Update(product);
+                context.SaveChanges();
+                return product;
             }
         }
     }

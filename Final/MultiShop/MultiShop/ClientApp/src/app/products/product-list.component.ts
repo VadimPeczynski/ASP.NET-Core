@@ -37,12 +37,41 @@ export class ProductListComponent implements OnInit {
     this.showImage = !this.showImage;
   }
 
+  addProduct() {
+    let product: IProduct = {
+      productId: 0,
+      productName: "Piła",
+      productCode: "TBX-0022",
+      releaseDate: "15.06.2016",
+      description: "Stalowa piła ręczna",
+      price: 11.55,
+      starRating: 3.7,
+      imageUrl:
+        "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
+    };
+    this.productService.addProduct(product).subscribe(() => {
+      this.productService.getProducts().subscribe((products: IProduct[]) => {
+        this.products = products;
+        this.filteredProducts = this.products;
+      });
+    });
+  }
+
+  editProduct(product: IProduct) {
+    this.productService.updateProduct(product).subscribe(() => {
+      this.productService.getProducts().subscribe((products: IProduct[]) => {
+        this.products = products;
+        this.filteredProducts = this.products;
+      });
+    });
+  }
+
   deleteProduct(product: IProduct) {
-    this.productService.deleteProduct(product.productId).subscribe(()=>{
-        this.productService.getProducts().subscribe((products: IProduct[]) => {
-            this.products = products;
-            this.filteredProducts = this.products;
-          });
+    this.productService.deleteProduct(product.productId).subscribe(() => {
+      this.productService.getProducts().subscribe((products: IProduct[]) => {
+        this.products = products;
+        this.filteredProducts = this.products;
+      });
     });
   }
 

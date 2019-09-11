@@ -16,8 +16,18 @@ namespace MultiShop.Models
         ImageUrl = "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"}
         }.AsQueryable();
 
+        public Product AddProduct(Product product)
+        {
+            throw new NotImplementedException();
+        }
+
         public void DeleteProduct(int id)
         {
+        }
+
+        public Product UpdateProduct(int id, Product product)
+        {
+            throw new NotImplementedException();
         }
     }
 }

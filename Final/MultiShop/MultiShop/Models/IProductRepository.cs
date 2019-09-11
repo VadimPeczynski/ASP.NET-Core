@@ -6,5 +6,7 @@ namespace MultiShop.Models
     {
         IQueryable<Product> Products { get; }
         void DeleteProduct(int id);
+        Product AddProduct(Product product);
+        Product UpdateProduct(int id, Product product);
     }
 }
