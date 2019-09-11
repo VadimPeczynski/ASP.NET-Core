@@ -26,9 +26,9 @@ namespace MultiShop.Controllers
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Product Get(int id)
         {
-            return "value";
+            return repository.Products.SingleOrDefault(product => product.ProductId == id);
         }
 
         // POST api/<controller>
@@ -45,8 +45,10 @@ namespace MultiShop.Controllers
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public int Delete(int id)
         {
+            repository.DeleteProduct(id);
+            return id;
         }
     }
 }

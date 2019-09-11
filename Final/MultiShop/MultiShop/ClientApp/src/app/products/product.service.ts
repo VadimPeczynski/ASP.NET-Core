@@ -18,6 +18,22 @@ export class ProductService {
         );
     }
 
+    getProduct(id:number): Observable<IProduct>{
+        const url = `${this._productUrl}/${id}`;
+        return this._http.get<IProduct>(url).pipe(
+            //tap(data => console.log('All: ' + JSON.stringify(data))),
+            catchError(this.handleError)
+        ); 
+    }
+
+    deleteProduct(id:number): Observable<{}>{
+        const url = `${this._productUrl}/${id}`;
+        return this._http.delete(url).pipe(
+            //tap(data => console.log('All: ' + JSON.stringify(data))),
+            catchError(this.handleError)
+        ); 
+    }
+
     private handleError(err: HttpErrorResponse) {
         console.log(err.message);
         return observableThrowError(err.message);

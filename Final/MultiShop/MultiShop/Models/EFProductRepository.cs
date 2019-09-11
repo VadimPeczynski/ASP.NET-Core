@@ -14,5 +14,18 @@ namespace MultiShop.Models
         }
 
         public IQueryable<Product> Products => context.Products;
+
+        public void DeleteProduct(int id)
+        {
+            using (context)
+            {
+                var product = context.Products
+                    .Where(s => s.ProductId == id)
+                    .FirstOrDefault();
+
+                context.Products.Remove(product);
+                context.SaveChanges();
+            }
+        }
     }
 }

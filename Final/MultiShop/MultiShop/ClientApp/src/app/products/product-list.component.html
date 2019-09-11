@@ -28,6 +28,7 @@
                         <th>Dostępny od</th>
                         <th>Cena</th>
                         <th>Ocena</th>
+                        <th>Usuń</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,6 +48,9 @@
                         <td>
                             <app-star [rating]="product.starRating" (starRatingClicked)="onStarRatingClicked($event)"></app-star>
                         </td>
+                        <button class='btn btn-danger' (click)='deleteProduct(product)'>
+                            Usuń
+                        </button>
                     </tr>
                 </tbody>
             </table>

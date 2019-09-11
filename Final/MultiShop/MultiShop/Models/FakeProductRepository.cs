@@ -15,5 +15,9 @@ namespace MultiShop.Models
         StarRating = 3.2,
         ImageUrl = "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"}
         }.AsQueryable();
+
+        public void DeleteProduct(int id)
+        {
+        }
     }
 }
